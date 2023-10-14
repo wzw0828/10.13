@@ -1,28 +1,37 @@
-class CRectangle{
-  int width;
-  int height;
-  public CRectangle(int w,int h){
-    width=w;
-    height=h;
-    System.out.println("constructor CRectangle(int w,int h) called"); 
-    }
+class CCount{
 
-    public CRectangle(){
-        width=10;
-        height=8;
-        System.out.println("constructor CRectangle() called");
-    }
-    public void show(){
-        System.out.println("width="+width);
-        System.out.println("height="+height);
-        
+    private static int cnt=0;
+    
+    public CCount(){
+    count();
     }
     
+    public static void count(){
+    cnt++;
+    }
+    
+    public static void setZero() {
+    cnt=0;
+    } 
+    public static void setValue(int n){
+    cnt=n;
+    }
+    public static void show(){
+    System.out.println("cnt="+cnt);
+    }
 }
-public class class01
-{
+public class class05{
 	public static void main(String[] args) {
-		CRectangle rec1=new CRectangle(5,2);
-	
+	    CCount cn1=new CCount();
+	    CCount cn2=new CCount();
+	    CCount.show();
+	    
+	    CCount.setZero();
+	    System.out.println("useing setZero()...");
+	    CCount.show();
+	    
+	    CCount.setValue(10);
+	    System.out.println("useing setZero(10)...");
+	    CCount.show();
 	}
 }
